@@ -19,7 +19,7 @@ export default {
 .button {
   font-size: 20px;
   height: 44px;
-  width: 190px;
+  min-width: 190px;
   display: flex;
   justify-content: center;
   align-items: center;

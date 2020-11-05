@@ -51,6 +51,7 @@ export default {
 }
 .banner__wrapper {
   width: 50%;
+  margin-left: 40px;
 }
 .banner__title {
   font-size: 34px;

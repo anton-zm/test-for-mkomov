@@ -26,6 +26,7 @@ export default {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: transform 0.1s ease-in-out;
 }
 .signup-btn:hover {
   transform: translateY(-5px);

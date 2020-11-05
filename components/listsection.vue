@@ -1,10 +1,32 @@
 <template>
   <section class="list">
     <content-wrapper class="list__wrapper">
-      <img :src="imgSrc" :alt="title" class="list__img" />
+      <img
+        src="img_mnogokvartir.svg"
+        alt="Жители многоквартирных домов"
+        class="list__img mkd"
+      />
       <div class="list__center-cont">
-        <List :title="title" :array="array" :btnText="btnText" />
+        <List
+          :array="mkd"
+          :title="'Жители многоквартирных домов'"
+          :btnText="'зарегистрировать личный кабинет'"
+        />
       </div>
+    </content-wrapper>
+    <content-wrapper class="list__wrapper">
+      <div class="list__center-cont">
+        <List
+          :array="uk"
+          :title="'Управляющие организации и ТСЖ'"
+          :btnText="'зарегистрироваться'"
+        />
+      </div>
+      <img
+        src="img_upr_company.svg"
+        alt="Управляющие организации и ТСЖ"
+        class="list__img uk"
+      />
     </content-wrapper>
   </section>
 </template>
@@ -14,18 +36,24 @@ import Content from '@/components/content'
 import SignUpBtn from '@/components/ui/signUpBtn'
 import List from '@/components/textList'
 export default {
-  props: {
-    title: String,
-    array: Array,
-    btnText: String,
-    imgSrc: String,
-  },
   components: {
     'content-wrapper': Content,
     List,
   },
   data() {
     return {
+      uk: [
+        'Быстрое и надёжное информирование жителей МКД',
+        'Работа с обращениями',
+        'Возможность прикрепления фото- и видеоматериалов',
+        'Получение заявок на выполнение работ',
+        'Обратная связь от жителей МКД',
+        'Контроль потребления коммуналных ресурсов',
+        'Предложение дополнительных платных услуг УО',
+        'Размещение новостей и отчётов',
+        'Автоматическая синхронизация вашего сайта с ГИС ЖКХ',
+        'Приём платежей за ЖКУ',
+      ],
       mkd: [
         'Получение сведений о квартире, доме, лицевом счёте и управляющей организации',
         'Отправка обращений или вопроса в управляющую организацию, ТСЖ или ЖСК',
@@ -44,6 +72,7 @@ export default {
 
 <style scoped>
 .list {
+  padding: 48px 0;
 }
 .list__center-cont {
   display: flex;
@@ -52,10 +81,16 @@ export default {
 .list__wrapper {
   display: flex;
   flex-direction: row;
+  margin-top: 30px;
 }
 
 .list__img {
-  height: 676px;
   margin: 0 44px;
+}
+.uk {
+  height: 546px;
+}
+.mkd {
+  height: 676px;
 }
 </style>
